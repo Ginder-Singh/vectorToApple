@@ -37,9 +37,9 @@ def create_contents_json(imageset_directory, flag_name, idiom):
     """Creates a Contents.json file for the imageset directory."""
     images = [
         {"filename": f"{flag_name}.png", "idiom": idiom, "scale": "1x"},
-        {"filename": f"{flag_name}@2x.png", "idiom": idiom, "scale": "2x"}
+        {"filename": f"{flag_name}@2x.png", "idiom": idiom, "scale": "2x"},
     ]
-    if idiom == "ios":
+    if idiom in ["ios", "universal"]:
         images.append({"filename": f"{flag_name}@3x.png", "idiom": idiom, "scale": "3x"})
     
     contents = {
@@ -60,7 +60,7 @@ def main():
     suffix = input("Enter a suffix for the file names (leave blank for none): ").strip()
     desired_width = int(input("Enter the desired width for the output images: "))
     desired_height = int(input("Enter the desired height for the output images: "))
-    idiom = input("Enter the idiom (tv/ios): ").strip().lower()
+    idiom = input("Enter the idiom (tv/ios/universal): ").strip().lower()
     input_directory = input("Enter the directory containing the .xml files: ")
 
     # Expand user directory if using ~
@@ -98,8 +98,8 @@ def main():
         scaled_png_file_2x = os.path.join(imageset_directory, f"{flag_name}@2x.png")
         scale_png(os.path.join(imageset_directory, f"{flag_name}.png"), scaled_png_file_2x, desired_width * 2, desired_height * 2)
 
-        # For iOS, scale for 3x output
-        if idiom == "ios":
+        # Scale for 3x output if idiom is ios or universal
+        if idiom in ["ios", "universal"]:
             scaled_png_file_3x = os.path.join(imageset_directory, f"{flag_name}@3x.png")
             scale_png(os.path.join(imageset_directory, f"{flag_name}.png"), scaled_png_file_3x, desired_width * 3, desired_height * 3)
 
@@ -109,7 +109,7 @@ def main():
             os.path.join(imageset_directory, f"{flag_name}.png"),
             os.path.join(imageset_directory, f"{flag_name}@2x.png"),
         ]
-        if idiom == "ios":
+        if idiom in ["ios", "universal"]:
             required_files.append(os.path.join(imageset_directory, f"{flag_name}@3x.png"))
 
         required_files.append(os.path.join(imageset_directory, "Contents.json"))

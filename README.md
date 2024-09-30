@@ -1,7 +1,7 @@
 # vectorToApple
 
 ## Overview
-`vectorToApple` is a Python script that converts Android vector drawable XML files into iOS and tvOS-compatible image assets. It generates SVG and PNG files, scales them for different resolutions, and creates the necessary `Contents.json` files for Xcode asset catalogs.
+`vectorToApple` is a Python script that converts Android vector drawable XML files into iOS, tvOS, and universal-compatible image assets. It generates SVG and PNG files, scales them for different resolutions, and creates the necessary `Contents.json` files for Xcode asset catalogs.
 
 ## Features
 - Converts Android vector drawables to SVG format.
@@ -46,7 +46,7 @@
    - The folder name for the assets (default: `Flags.xcassets`)
    - A suffix for the file names (optional)
    - Desired width and height for the output images
-   - The idiom (tv/ios)
+   - The idiom (tv/ios/universal)
    - The directory containing the `.xml` files
 
 ## Output
