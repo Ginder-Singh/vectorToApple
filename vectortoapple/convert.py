@@ -69,9 +69,11 @@ def main():
     # Ensure the input directory is absolute
     input_directory = os.path.abspath(input_directory)
 
-    xcassets_directory = os.path.join(os.path.abspath(os.path.dirname(__file__)), xcassets_name)
+    # Use the current working directory for the output
+    xcassets_directory = os.path.join(os.getcwd(), xcassets_name)
     os.makedirs(xcassets_directory, exist_ok=True)
     create_root_contents_json(xcassets_directory)
+    print(f"Output will be saved in: {xcassets_directory}")
 
     xml_files = [f for f in os.listdir(input_directory) if f.endswith('.xml')]
     
