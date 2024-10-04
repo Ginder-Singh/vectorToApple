@@ -25,7 +25,7 @@ If you prefer to install from the source, you can clone the repository and insta
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/yourusername/vectortoapple.git
+   git clone https://github.com/Ginder-Singh/vectortoapple.git
    cd vectortoapple
    ```
 
