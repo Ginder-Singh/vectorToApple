@@ -1,0 +1,2 @@
+[console_scripts]
+vectortoapple = vectortoapple.convert:main

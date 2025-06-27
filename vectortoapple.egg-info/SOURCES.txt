@@ -1,0 +1,11 @@
+LICENSE
+README.md
+setup.py
+vectortoapple/__init__.py
+vectortoapple/convert.py
+vectortoapple.egg-info/PKG-INFO
+vectortoapple.egg-info/SOURCES.txt
+vectortoapple.egg-info/dependency_links.txt
+vectortoapple.egg-info/entry_points.txt
+vectortoapple.egg-info/requires.txt
+vectortoapple.egg-info/top_level.txt

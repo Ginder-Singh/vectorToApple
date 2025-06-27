@@ -1,0 +1,11 @@
+{
+  "name": "Flags Asset Catalog",
+  "version": "1.0",
+  "total_files": 251,
+  "successful_conversions": 250,
+  "failed_conversions": 1,
+  "filter": "Only files ending with '_small.xml'",
+  "naming_convention": "UPPERCASE-s (e.g., us_small.xml -> US-s.imageset)",
+  "file_type": "SVG",
+  "sizes": "20x20 (1x), 40x40 (2x), 60x60 (3x)"
+}
